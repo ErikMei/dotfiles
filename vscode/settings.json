@@ -1,0 +1,38 @@
+{
+    "workbench.sideBar.location": "right",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<C-w>", "C"],
+            "commands": ["workbench.action.closeEditorsInGroup"]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "editor.fontLigatures": null,
+    "tabnine.experimentalAutoImports": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "vim.smartRelativeLine": true,
+    "window.zoomLevel": 0
+}
