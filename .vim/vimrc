@@ -1,0 +1,59 @@
+" set nocompatible
+set number
+set relativenumber
+set wrap
+
+set expandtab
+set shiftround
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Search
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+set showmatch
+nnoremap <expr> ; getcharsearch().forward ? ';' : ','
+nnoremap <expr> , getcharsearch().forward ? ',' : ';'
+
+set foldenable
+set matchtime=3
+set foldlevelstart=10
+set t_Co=256
+set background=dark
+
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=*/node_modules/*
+set wildignore+=*/.git/*
+
+let mapleader = " "
+
+" Plugins
+if filereadable(expand("~/.vim/.vimrc.plug"))
+	source ~/.vim/.vimrc.plug
+endif
+
+filetype plugin on
+runtime macros/matchit.vim
+
+syntax on
+colorscheme dracula
+
+" Windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Brackets/Parens
+inoremap {<CR> {<CR>}<Esc>ko
+
+" FZF
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+
+" Prettier
+autocmd BufWritePre *.js Prettier
