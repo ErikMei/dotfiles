@@ -34,5 +34,9 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "vim.smartRelativeLine": true,
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
 }
