@@ -1,7 +1,8 @@
-" set nocompatible
+set nocompatible
 set number
 set relativenumber
 set wrap
+let mapleader = " "
 
 set expandtab
 set shiftround
@@ -14,9 +15,14 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
+nnoremap <leader>h :set<Space>nohlsearch!<CR>
 set showmatch
+
 nnoremap <expr> ; getcharsearch().forward ? ';' : ','
 nnoremap <expr> , getcharsearch().forward ? ',' : ';'
+
+" To match C and D
+nnoremap Y y$
 
 set foldenable
 set matchtime=3
@@ -29,7 +35,6 @@ set wildmode=longest:full,full
 set wildignore+=*/node_modules/*
 set wildignore+=*/.git/*
 
-let mapleader = " "
 
 " Plugins
 if filereadable(expand("~/.vim/.vimrc.plug"))
@@ -41,6 +46,9 @@ runtime macros/matchit.vim
 
 syntax on
 colorscheme dracula
+
+" Buffers
+set hidden
 
 " Windows
 nnoremap <C-h> <C-w>h

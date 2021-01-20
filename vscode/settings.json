@@ -19,6 +19,10 @@
             "after": ["<C-w>", "k"]
         },
         {
+            "before": ["Y"],
+            "after": ["y$"]
+        },
+        {
             "before": ["<C-w>", "C"],
             "commands": ["workbench.action.closeEditorsInGroup"]
         },
