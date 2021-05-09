@@ -1,6 +1,8 @@
 set nocompatible
 set number
 set relativenumber
+set autoindent
+set smartindent
 set wrap
 let mapleader = " "
 
@@ -32,8 +34,10 @@ set background=dark
 
 set wildmenu
 set wildmode=longest:full,full
+set wildcharm=<C-z>
 set wildignore+=*/node_modules/*
 set wildignore+=*/.git/*
+set wildignorecase
 
 
 " Plugins
@@ -49,6 +53,8 @@ colorscheme dracula
 
 " Buffers
 set hidden
+nnoremap <PageUp> :bprevious<CR>
+nnoremap <PageDown> :bnext<CR>
 
 " Windows
 nnoremap <C-h> <C-w>h
@@ -57,7 +63,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Brackets/Parens
-inoremap {<CR> {<CR>}<Esc>ko
+inoremap {<CR> {<CR>}<Esc>O
+inoremap (<CR> (<CR>)<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
 
 " FZF
 nnoremap <leader>f :Files<CR>
@@ -65,3 +73,4 @@ nnoremap <leader>b :Buffers<CR>
 
 " Prettier
 autocmd BufWritePre *.js Prettier
+
