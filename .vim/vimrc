@@ -21,6 +21,10 @@ set hlsearch
 nnoremap <leader>h :set<Space>nohlsearch!<CR>
 set showmatch
 
+nnoremap <Up> gk
+nnoremap <Down> gj
+nnoremap n nzz
+nnoremap N Nzz
 nnoremap <expr> ; getcharsearch().forward ? ';' : ','
 nnoremap <expr> , getcharsearch().forward ? ',' : ';'
 
@@ -69,6 +73,10 @@ colorscheme dracula
 set hidden
 nnoremap <PageUp> :bprevious<CR>
 nnoremap <PageDown> :bnext<CR>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
 
 " Windows
 nnoremap <C-h> <C-w>h
@@ -112,3 +120,6 @@ if IsWSL()
         augroup END
     endif
 endif
+
+" Markdown
+let g:markdown_fenced_languages = ['html', 'javascript']
