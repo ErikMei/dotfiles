@@ -42,5 +42,10 @@
     "emmet.triggerExpansionOnTab": true,
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-    }
+    },
+    "telemetry.enableTelemetry": false,
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.snippetSuggestions": "bottom",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.showWelcomeMessage": false
 }
