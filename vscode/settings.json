@@ -23,6 +23,14 @@
             "after": ["y$"]
         },
         {
+            "before": ["N"],
+            "after": ["Nzz"]
+        },
+        {
+            "before": ["n"],
+            "after": ["nzz"]
+        },
+        {
             "before": ["<C-w>", "C"],
             "commands": ["workbench.action.closeEditorsInGroup"]
         },
@@ -31,13 +39,34 @@
             "commands": ["workbench.action.toggleSidebarVisibility"]
         }
     ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "y"],
+            "after": ["\"", "*", "y"]
+        },
+        {
+            "before": ["<leader>", "Y"],
+            "after": ["\"", "*", "Y"]
+        },
+        {
+            "before": ["<leader>", "yy"],
+            "after": ["\"", "*", "y", "y"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", "y"],
+            "after": ["\"", "*", "y"]
+        }
+    ],
     "vim.leader": "<space>",
+    "vim.smartRelativeLine": true,
+    "vim.surround": true,
     "editor.fontLigatures": null,
     "tabnine.experimentalAutoImports": true,
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "vim.smartRelativeLine": true,
     "window.zoomLevel": 0,
     "emmet.triggerExpansionOnTab": true,
     "emmet.includeLanguages": {

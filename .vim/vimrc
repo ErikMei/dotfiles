@@ -1,6 +1,7 @@
 set nocompatible
 set number
 set relativenumber
+set autoread
 set autoindent
 set smartindent
 set wrap
@@ -28,6 +29,15 @@ nnoremap N Nzz
 nnoremap <expr> ; getcharsearch().forward ? ';' : ','
 nnoremap <expr> , getcharsearch().forward ? ',' : ';'
 
+" Autocomplete mappings
+inoremap <silent> ,f <C-x><C-f>
+inoremap <silent> ,i <C-x><C-i>
+inoremap <silent> ,l <C-x><C-l>
+inoremap <silent> ,n <C-x><C-n>
+inoremap <silent> ,o <C-x><C-o>
+inoremap <silent> ,t <C-x><C-]>
+inoremap <silent> ,u <C-x><C-u>
+
 " To match C and D
 nnoremap Y y$
 
@@ -53,8 +63,8 @@ set background=dark
 set wildmenu
 set wildmode=longest:full,full
 set wildcharm=<C-z>
-set wildignore+=*/node_modules/*
-set wildignore+=*/.git/*
+set wildignore+=*node_modules/*
+set wildignore+=*.git/*
 set wildignorecase
 
 
@@ -64,7 +74,11 @@ if filereadable(expand("~/.vim/.vimrc.plug"))
 endif
 
 filetype plugin on
-runtime macros/matchit.vim
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
 syntax on
 colorscheme dracula
@@ -123,3 +137,6 @@ endif
 
 " Markdown
 let g:markdown_fenced_languages = ['html', 'javascript']
+
+" Disable netrw
+" let loaded_netrwPlugin = 1
