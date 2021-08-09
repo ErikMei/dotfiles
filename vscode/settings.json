@@ -37,6 +37,14 @@
         {
             "before": ["<leader>", "b"],
             "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<C-u>"],
+            "after": ["H", "z", "z"]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": ["L", "z", "z"]
         }
     ],
     "vim.normalModeKeyBindings": [
@@ -51,15 +59,33 @@
         {
             "before": ["<leader>", "yy"],
             "after": ["\"", "*", "y", "y"]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
         }
     ],
     "vim.visualModeKeyBindings": [
         {
             "before": ["<leader>", "y"],
             "after": ["\"", "*", "y"]
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
         }
     ],
     "vim.leader": "<space>",
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
     "vim.smartRelativeLine": true,
     "vim.surround": true,
     "editor.fontLigatures": null,
