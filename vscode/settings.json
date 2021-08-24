@@ -47,6 +47,16 @@
             "after": ["L", "z", "z"]
         }
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [">"],
+            "after": [">", "g", "v"]
+        },
+        {
+            "before": ["<"],
+            "after": ["<", "g", "v"]
+        }
+    ],
     "vim.normalModeKeyBindings": [
         {
             "before": ["<leader>", "y"],
