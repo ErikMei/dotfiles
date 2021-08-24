@@ -24,11 +24,11 @@
         },
         {
             "before": ["N"],
-            "after": ["Nzz"]
+            "after": ["N", "z", "z"]
         },
         {
             "before": ["n"],
-            "after": ["nzz"]
+            "after": ["n", "z", "z"]
         },
         {
             "before": ["<C-w>", "C"],
@@ -101,6 +101,7 @@
     "telemetry.enableTelemetry": false,
     "emmet.showSuggestionsAsSnippets": true,
     "editor.snippetSuggestions": "bottom",
+    "editor.acceptSuggestionOnCommitCharacter":false,
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.showWelcomeMessage": false
 }
