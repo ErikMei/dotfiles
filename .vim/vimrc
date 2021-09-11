@@ -1,6 +1,7 @@
 set nocompatible
 set number
 set relativenumber
+set cursorline
 set autoread
 set autoindent
 set smartindent
@@ -22,10 +23,17 @@ set hlsearch
 nnoremap <leader>h :set<Space>nohlsearch!<CR>
 set showmatch
 
+" change variable and repeat with .
+nnoremap c*	*Ncgn
+
 nnoremap <Up> gk
 nnoremap <Down> gj
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap { {zz
+nnoremap } }zz
+vnoremap > >gv
+vnoremap < <gv
 nnoremap <expr> ; getcharsearch().forward ? ';' : ','
 nnoremap <expr> , getcharsearch().forward ? ',' : ';'
 
@@ -91,12 +99,22 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
+nnoremap <leader><leader> <C-^>
 
 " Windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" navigate quickfix list
+nnoremap  <C-j>  :cnext<cr>zz
+nnoremap  <C-k>  :cprevious<cr>zz
+nnoremap  ]q     :cnext<cr>zz
+nnoremap  [q     :cprevious<cr>zz
+nnoremap  ]Q     :clast<cr>zz
+nnoremap  [Q     :cfirst<cr>zz
+
 
 " Brackets/Parens
 inoremap {<CR> {<CR>}<Esc>O
